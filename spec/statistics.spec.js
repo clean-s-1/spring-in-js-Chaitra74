@@ -22,6 +22,9 @@ describe("StatisticsTest",function(){
     it("reportsNaNForEmptyInput",function(){
         const numbers=[];
         const stats=getStatistics(numbers);
+        expect(isNaN(stats.min)).toBe(true);
+        expect(isNaN(stats.max)).toBe(true);
+        expect(isNaN(stats.average)).toBe(true);
         // All fields of computedStats (average, max, min) must be
         // NAN (not-a-number)
         // Design the expect statement here.
