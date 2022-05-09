@@ -1,4 +1,8 @@
 const getStatistics=require("../app/statistics");
+const EmailAlert= require("../app/EmailAlert");
+const LEDAlert= require("../app/LEDAlert");
+const StatsAlerter= require("../app/StatsAlerter");
+
 describe("StatisticsTest",function(){
     it("reportsAverageMinMaxx",function(){
         const r1 = 1.5;
@@ -34,8 +38,8 @@ describe("StatisticsTest",function(){
          const statsAlerter=new StatsAlerter(maxThreshold, alerters);
          statsAlerter.checkAndAlert([99.8, 34.2, 4.5, 6.7]);
      
-         expect(emailAlert.emailSent).tobe(true);
-         expect(ledAlert.ledGlows).tobe(true);
+         expect(emailAlert.emailSent).toBe(true);
+         expect(ledAlert.ledGlows).toBe(true);
 
         
         
