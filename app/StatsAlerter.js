@@ -4,8 +4,7 @@ const getStatistics= require("../app/statistics");
 
 module.exports = function (maxThreshold,alerters) {
     this.maxThreshold = maxThreshold;   
-    this.emailAlert= alerters[0];
-    this.ledAlert= alerters[1];  
+   [this.emailAlert, this.ledAlert] = alerters;
 
     this.checkAndAlert= function(numbers){
         const stats=getStatistics(numbers);      
